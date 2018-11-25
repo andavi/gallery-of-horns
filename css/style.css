@@ -1,19 +1,46 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(165, 206, 241);
 }
 
-div {
+main>div {
   border: 1px black solid;
+  border-radius: 5px;
   width: 200px;
   margin: 10px;
   padding: 10px;
   display: inline-block;
+  background-color: whitesmoke;
 }
 
-#photo-template {
-  /* display: none; */
+main {
+  text-align: center;
+}
+header {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Shojumaru', cursive;
+  font-size: 300%;
+  margin: 20px;
+}
+
+h2 {
+  font-size: 120%;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 img {
   width: 200px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  font-size: 80%;
+  margin: 20px;
 }
