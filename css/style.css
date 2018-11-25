@@ -1,3 +1,19 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+div {
+  border: 1px black solid;
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  display: inline-block;
+}
+
+#photo-template {
+  display: none;
+}
+
+img {
+  width: 200px;
+}
