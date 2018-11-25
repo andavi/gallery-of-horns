@@ -13,7 +13,18 @@ function Card(obj) {
 const allCards = [];
 
 Card.prototype.render = function() {
-  console.log(this);
+  $('main').append('<div class="clone"></div>');
+  let $clone = $('div[class="clone"]');
+
+  let template = $('#photo-template').html();
+
+  $clone.html(template);
+  $clone.find('h2').text(this.title);
+  $clone.find('img').attr('src', this.url);
+  $clone.find('p').text(this.description);
+
+  $clone.removeClass('clone');
+  $clone.attr('class', this.name);
 };
 
 function readJson() {
