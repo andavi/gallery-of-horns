@@ -27,6 +27,23 @@ Card.prototype.render = function() {
   $clone.attr('class', this.name);
 };
 
+Card.prototype.addOptions = function() {
+  // make unique options by converting to set and back to array
+  let options = allCards.map(c => c.keyword);
+  options = new Set(options);
+  options = [...options];
+
+  options.forEach(option => {
+    $('select').append('<option class = "option"></option>');
+    let $option = $('option[class="option"]');
+  
+    $option.attr('value', option);
+    $option.text(option);
+  
+    $option.removeClass('option');
+  });
+}
+
 function readJson() {
   $.get('data/page-1.json', 'json')
     .then(data => {
@@ -34,6 +51,7 @@ function readJson() {
     })
     .then(() => {
       allCards.forEach(c => c.render());
+      Card.prototype.addOptions();
     });
 }
 
