@@ -15,16 +15,16 @@ Estimate of time needed to complete: 1 hour
 
 Start time: 1730
 
-Finish time: _____
+Finish time: 1815
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1.25 hours
 
 
 ### Number and name of feature: #3 Style Application
 
 Estimate of time needed to complete: 1 hour
 
-Start time: _____
+Start time: 1815
 
 Finish time: _____
 
