@@ -24,7 +24,7 @@ Card.prototype.render = function() {
   $clone.find('p').text(this.description);
 
   $clone.removeClass('clone');
-  $clone.attr('class', this.name);
+  $clone.attr('class', this.keyword);
 };
 
 Card.prototype.addOptions = function() {
@@ -51,9 +51,21 @@ function readJson() {
     })
     .then(() => {
       allCards.forEach(c => c.render());
+      // remove first empty div
+      $('main').find('div:first-child').remove();
       Card.prototype.addOptions();
     });
 }
+
+$('select').on('change', function() {
+  let selection = $(this).val();
+  if (selection === 'default') {
+    $('div').show();
+    return;
+  }
+  $('div').hide();
+  $(`div[class="${selection}"`).show();
+});
 
 function init() {
   // get data
