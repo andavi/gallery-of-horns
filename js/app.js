@@ -51,6 +51,8 @@ function readJson(filename) {
 }
 
 $('select').on('change', function() {
+  $('#name').prop('checked', false);
+  $('#horns').prop('checked', false);
   let selection = $(this).val();
   if (selection === 'default') {
     $('div').show();
@@ -117,4 +119,5 @@ $('#horns').on('change', function() {
   }
 });
 
+// document ready function
 $(() => readJson('data/page-1.json'));
