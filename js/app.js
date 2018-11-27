@@ -10,7 +10,8 @@ function Card(obj) {
   allCards.push(this);
 }
 
-const allCards = [];
+let allCards = [];
+let page = 1;
 
 Card.prototype.render = function() {
   $('main').append('<div class="clone"></div>');
@@ -44,15 +45,15 @@ Card.prototype.addOptions = function() {
   });
 }
 
-function readJson() {
-  $.get('data/page-1.json', 'json')
+function readJson(filename) {
+  $.get(filename, 'json')
     .then(data => {
       data.forEach(o => new Card(o));
     })
     .then(() => {
       allCards.forEach(c => c.render());
       // remove first empty div
-      $('main').find('div:first-child').remove();
+      $('#photo-template').hide();
       Card.prototype.addOptions();
     });
 }
@@ -67,9 +68,30 @@ $('select').on('change', function() {
   $(`div[class="${selection}"`).show();
 });
 
+function empty() {
+  allCards = [];
+  $('main').empty();
+  $('select').empty();
+  $('select').append('<option value="default">-- Filter by Keyword --</option>');
+}
+
+$('#page').on('click', function() {
+  if (page === 1) {
+    page = 2;
+    empty();
+    readJson('data/page-2.json');
+    $(this).text('Page 1');
+  } else {
+    page = 1;
+    empty();
+    readJson('data/page-1.json');
+    $(this).text('Page 2');
+  }
+});
+
 function init() {
   // get data
   // render
 }
 
-$(() => readJson());
+$(() => readJson('data/page-1.json'));
