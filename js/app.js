@@ -76,12 +76,12 @@ $('#page').on('click', function() {
     page = 2;
     empty();
     readJson('data/page-2.json');
-    $(this).html('Page 1');
+    $(this).text('Page 1');
   } else {
     page = 1;
     empty();
     readJson('data/page-1.json');
-    $(this).html('Page 2');
+    $(this).text('Page 2');
   }
 });
 
