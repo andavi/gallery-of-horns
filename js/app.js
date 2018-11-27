@@ -65,6 +65,8 @@ function empty() {
   $('main').empty();
   $('select').empty();
   $('select').append('<option value="default">-- Filter by Keyword --</option>');
+  $('#name').prop('checked', false);
+  $('#horns').prop('checked', false);
 }
 
 $('#page').on('click', function() {
@@ -81,9 +83,38 @@ $('#page').on('click', function() {
   }
 });
 
-function init() {
-  // get data
-  // render
-}
+$('#name').on('change', function() {
+  console.log($(this).is(':checked'));
+  if ($(this).is(':checked')) {
+    $('#horns').prop('checked', false);
+    allCards.sort((a, b) => {
+      if (a.title < b.title) return -1;
+      if (a.title > b.title) return 1;
+      return 0;
+    });
+    $('main').empty();
+    allCards.forEach(c => c.render());
+  } else {
+    empty();
+    const filename = page === 1 ? 'data/page-1.json' : 'data/page-2.json';
+    readJson(filename);
+  }
+});
+
+$('#horns').on('change', function() {
+  console.log($(this).is(':checked'));
+  if ($(this).is(':checked')) {
+    $('#name').prop('checked', false);
+    allCards.sort((a, b) => {
+      return a.horns - b.horns;
+    });
+    $('main').empty();
+    allCards.forEach(c => c.render());
+  } else {
+    empty();
+    const filename = page === 1 ? 'data/page-1.json' : 'data/page-2.json';
+    readJson(filename);
+  }
+});
 
 $(() => readJson('data/page-1.json'));
