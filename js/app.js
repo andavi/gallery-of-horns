@@ -51,6 +51,8 @@ function readJson(filename) {
 }
 
 $('select').on('change', function() {
+  $('#name').prop('checked', false);
+  $('#horns').prop('checked', false);
   let selection = $(this).val();
   if (selection === 'default') {
     $('div').show();
@@ -74,12 +76,12 @@ $('#page').on('click', function() {
     page = 2;
     empty();
     readJson('data/page-2.json');
-    $(this).text('Page 1');
+    $(this).html('Page 1');
   } else {
     page = 1;
     empty();
     readJson('data/page-1.json');
-    $(this).text('Page 2');
+    $(this).html('Page 2');
   }
 });
 
@@ -117,4 +119,5 @@ $('#horns').on('change', function() {
   }
 });
 
+// document ready function
 $(() => readJson('data/page-1.json'));
