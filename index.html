@@ -6,6 +6,13 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Shojumaru" rel="stylesheet">
+    <script type="text/x-handlebars-template" id="template">
+      <div id="{{keyword}}">
+        <h2>{{title}}</h2>
+        <img src="{{url}}">
+        <p>{{description}}</p>
+      </div>
+    </script>
   </head>
   <body>
     <header>
@@ -21,14 +28,15 @@
     </div>
     <main>
     </main>
-    <div class="page">
+    <section class="page">
       <a id="page" href="#">Page 2</a>
-    </div>
+    </section>
     <footer>
       &copy; 2018 Code Fellows
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
