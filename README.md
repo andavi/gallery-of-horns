@@ -37,27 +37,27 @@ Estimate of time needed to complete: 2 hours
 
 Start time: 1800
 
-Finish time: 
+Finish time: 1900
 
-Actual time needed to complete: 
+Actual time needed to complete: 1 hour
 
 
 ### Number and name of feature: #5 Templating
 
 Estimate of time needed to complete: 2 hours
 
-Start time: 
+Start time: 1900
 
-Finish time: 
+Finish time: 1930
 
-Actual time needed to complete: 
+Actual time needed to complete: 30 minutes
 
 
 ### Number and name of feature: #6 Styling with Flexbox
 
 Estimate of time needed to complete: 1 hour
 
-Start time: 
+Start time: 1930
 
 Finish time: 
 

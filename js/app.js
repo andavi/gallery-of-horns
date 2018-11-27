@@ -14,18 +14,22 @@ let allCards = [];
 let page = 1;
 
 Card.prototype.render = function() {
-  $('main').append('<div class="clone"></div>');
-  let $clone = $('div[class="clone"]');
+  // $('main').append('<div class="clone"></div>');
+  // let $clone = $('div[class="clone"]');
 
-  let template = $('#photo-template').html();
+  // let template = $('#photo-template').html();
 
-  $clone.html(template);
-  $clone.find('h2').text(this.title);
-  $clone.find('img').attr('src', this.url);
-  $clone.find('p').text(this.description);
+  // $clone.html(template);
+  // $clone.find('h2').text(this.title);
+  // $clone.find('img').attr('src', this.url);
+  // $clone.find('p').text(this.description);
 
-  $clone.removeClass('clone');
-  $clone.attr('class', this.keyword);
+  // $clone.removeClass('clone');
+  // $clone.attr('class', this.keyword);
+  let templateScript = $('#template').html();
+  let template = Handlebars.compile(templateScript);
+  let newCard = template(this);
+  $('main').append(newCard);
 };
 
 Card.prototype.addOptions = function() {
@@ -52,7 +56,7 @@ function readJson(filename) {
     })
     .then(() => {
       allCards.forEach(c => c.render());
-      // remove first empty div
+      // hides first empty div
       $('#photo-template').hide();
       Card.prototype.addOptions();
     });
@@ -65,7 +69,7 @@ $('select').on('change', function() {
     return;
   }
   $('div').hide();
-  $(`div[class="${selection}"`).show();
+  $(`div[id="${selection}"`).show();
 });
 
 function empty() {
