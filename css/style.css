@@ -3,6 +3,12 @@ body {
   background-color: rgb(165, 206, 241);
 }
 
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 main>div {
   border: 1px black solid;
   border-radius: 5px;

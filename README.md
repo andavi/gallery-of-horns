@@ -59,9 +59,9 @@ Estimate of time needed to complete: 1 hour
 
 Start time: 1930
 
-Finish time: 
+Finish time: 1945
 
-Actual time needed to complete: 
+Actual time needed to complete: 15 minutes
 
 
 
@@ -69,7 +69,7 @@ Actual time needed to complete:
 
 Estimate of time needed to complete: 1 hour
 
-Start time: 
+Start time: 1945
 
 Finish time: 
 
